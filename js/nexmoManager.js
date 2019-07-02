@@ -24,8 +24,9 @@ var GetJWT=(NexmoApp,success)=>{
 
 }
 
+//THIS METHOD USES FIXED JWT TOKEN PROVIDED BY NEXMO TEAM FOR DEMO PURPOSE
 /**
- * @description {* function is only used for the whatsapp testing purpose, for production there is already a method available }
+ * @description {* function is only used for the whatsapp testing purpose, for production there is already a method available (Fixed JWT TOKEN)}
  * @param {*} from 
  * @param {*} text 
  * @param {*} to 
@@ -37,7 +38,7 @@ var sendBySandBox=(from,text,to,type,isTemplateRequired,token,callback)=>{
 
  
 
-  console.error("WHATSAPP Sending"+ from);
+//  console.error("WHATSAPP Sending"+ from);
  
   var data={     "from": { "type": type, "number": from },     "to": { "type": type, "number": to },     "message": {       "content": {         "type": "text",         "text": text       }     }   };
  
@@ -60,11 +61,10 @@ var sendBySandBox=(from,text,to,type,isTemplateRequired,token,callback)=>{
     }
 
     
- console.error("Data Extracted"+ JSON.stringify(options));
+
  
     try{
-   // console.log("DATA"+JSON.stringify(options.body));
-   //request.post()
+   
 
    superagent
   .post('https://sandbox.nexmodemo.com/v0.1/messages/')
@@ -79,17 +79,15 @@ var sendBySandBox=(from,text,to,type,isTemplateRequired,token,callback)=>{
       callback(err);
       return;
     }
-     console.log("ERROR"+err);
+   
     if(resp.status!=200 && resp.status!=202){
           callback(resp.statusCode);
-          console.log("Body "+body);
-          console.log("Code "+resp.statusCode);
-          console.error("ERROR "+resp.statusMessage);
+        
           return
       }
      
   
-        console.log(type+" Message sent");
+       // console.log(type+" Message sent");
         
        
         
@@ -159,7 +157,7 @@ var sendByProdMessageApi=(from,text,to,type,NexmoConfiguraiton,callback)=>{
 
         if(resp.statusCode==401){
          
-          console.log("Invalid Access token");
+         // console.log("Invalid Access token");
           NexmoConfiguraiton.retries++;
           if( NexmoConfiguraiton.retries>3){
             callback("failed to get new token");
@@ -169,7 +167,7 @@ var sendByProdMessageApi=(from,text,to,type,NexmoConfiguraiton,callback)=>{
           GetJWT(NexmoConfiguraiton.NexmoApp,function(token){
 
                 if(token==null){
-                  console.log("Failed to get the token");
+                 // console.log("Failed to get the token");
                   callback("Failed to get the token");
                   return;
                 }
@@ -182,16 +180,16 @@ var sendByProdMessageApi=(from,text,to,type,NexmoConfiguraiton,callback)=>{
             return;
         }
           callback(" Failed to send the last message to"+to+" by "+ type);
-          console.error(err);
+        //  console.error(err);
           return
       }
       if(body){
   
-        console.log(type+" Message sent");
-        console.log(data);
-        console.log("Body "+body);
-        console.log("Code "+resp.statusCode);
-        console.log("SMEssage "+resp.statusMessage);
+        // console.log(type+" Message sent");
+        // console.log(data);
+        // console.log("Body "+body);
+        // console.log("Code "+resp.statusCode);
+        // console.log("SMEssage "+resp.statusMessage);
         callback(null,data);
           return;
       }
@@ -202,7 +200,7 @@ var sendByProdMessageApi=(from,text,to,type,NexmoConfiguraiton,callback)=>{
     }
   
      
-      console.log(err);
+     // console.log(err);
   
   });
 
@@ -222,7 +220,7 @@ var sendWhatsAppMessage=(from,text,to,issandbox,isTemplateRequired,NexmoConfigur
         sendBySandBox(from,text,to,"whatsapp",true,NexmoConfiguraiton.token,function(err,data){
 
         if(err){
-          console.log("error while sending the template");
+        //  console.log("error while sending the template");
           return;
         }
 
@@ -251,7 +249,7 @@ var sendWhatsAppMessage=(from,text,to,issandbox,isTemplateRequired,NexmoConfigur
       (err, data) => {
         //  res.send(er);
         callback(err,data);
-          console.log(err); }
+         // console.log(err); }
     );
   }
 

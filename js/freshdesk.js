@@ -43,7 +43,7 @@ var GetAllTickets=(query,FreshDeskConfig,callback)=>{
         }
 
        
-        console.log(resp);
+        // console.log(resp);
 
     }).auth(FreshDeskConfig.User,FreshDeskConfig.Password)
     
@@ -105,7 +105,7 @@ var CreateContactByFacebook=(facebookid,name,FreshDeskConfig,callback)=>{
         }
 
        
-        console.log(resp);
+        //console.log(resp);
 
     }).auth(FreshDeskConfig.User,FreshDeskConfig.Password)
 

@@ -111,9 +111,9 @@ app.post('/webhook/inbound-message/:callbackId', function(req, res){
     
     res.status(200).send("sent").end();
    //res.status(200).end();
-    console.info("Message Received");
+   // console.info("Message Received");
     var callbackId=req.params.callbackId;
-    console.log(JSON.stringify(req.body));
+  //  console.log(JSON.stringify(req.body));
 
     
     if(req.body.type=="text"){
@@ -122,8 +122,8 @@ app.post('/webhook/inbound-message/:callbackId', function(req, res){
         var ContactNo=req.body.msisdn;
         var message=req.body.text;
         var callbackId=req.params.callbackId;
-        console.info("SMS Received from"+ContactNo+" message is"+ message);
-        console.info("CALLBACK ID Received"+callbackId);
+      //  console.info("SMS Received from"+ContactNo+" message is"+ message);
+       // console.info("CALLBACK ID Received"+callbackId);
        
         nfPlugin.onReceiveSMS(ContactNo,message,callbackId,function(err,data){
 
@@ -134,7 +134,7 @@ app.post('/webhook/inbound-message/:callbackId', function(req, res){
             }
             else
             {
-                console.log(data);
+               // console.log(data);
                 //res.status(200).send(data).end();
                // res.status(200).send("sent").end();
             }
@@ -163,7 +163,7 @@ app.post('/webhook/inbound-message/:callbackId', function(req, res){
             }
             else
             {
-                console.log(data);
+               // console.log(data);
                 //res.status(200).send(data).end();
               //  res.status(200).send("sent").end();
             }
@@ -193,7 +193,7 @@ app.post('/webhook/inbound-message/:callbackId', function(req, res){
 
             nfPlugin.SendToUser(user,"Media files are not supported",function(err,data){
 
-              console.log("Error message sent successfuly");
+              //console.log("Error message sent successfuly");
               
              });
 
@@ -204,7 +204,7 @@ app.post('/webhook/inbound-message/:callbackId', function(req, res){
 
         }
 
-        console.error("Facebook message Received from"+ContactNo+" message is"+ message);
+        //console.error("Facebook message Received from"+ContactNo+" message is"+ message);
       
         nfPlugin.onReceiveFacebookMessage(ContactNo,message,callbackId,function(err,data){
 
@@ -214,7 +214,7 @@ app.post('/webhook/inbound-message/:callbackId', function(req, res){
             }
             else
             {
-                console.log(data);
+                //console.log(data);
                // res.status(200).send(data).end();
             }
 
@@ -248,7 +248,7 @@ app.post('/webhook/inbound-message/:callbackId', function(req, res){
 
             nfPlugin.SendToUser(user,"Media files are not supported",function(err,data){
 
-              console.log("Error message sent successfuly");
+             // console.log("Error message sent successfuly");
               
              });
 
@@ -267,7 +267,7 @@ app.post('/webhook/inbound-message/:callbackId', function(req, res){
             }
             else
             {
-                console.log(data);
+               // console.log(data);
                // res.status(200).send(data).end();
             }
 
@@ -287,7 +287,7 @@ app.post('/webhook/inbound-message/:callbackId', function(req, res){
     }
     else
     {
-        console.log("No Channel found"+req.body.from.type);
+        //console.log("No Channel found"+req.body.from.type);
         res.status(200).send("OK").end();
     }
     
@@ -298,33 +298,26 @@ app.post('/webhook/inbound-message/:callbackId', function(req, res){
 
 app.post('/webhook/inbound-status/:callbackId', function(req, res){
     
-    console.log("Received the message delivery updates");
+   
     res.status(200).end();
 
 });
 
 //----------------------SMS------------------------------
 
-//-----------Webhook APPS
+//-----------Webhook APPS--
+/**
+ * @description only in case of additional apps require to add web hook url
+ * or need to split the channel 
+ */
 app.post('/webhook/app/inbound-message/:callbackId', function(req, res){
     
-    console.log(req.body);
-    console.log("What's App Message Received");
-    console.log("From: "+req.body.from.number);
-    console.log("From: "+req.body.message.content.text);
-    console.log(Sessions);
+   
     nfPlugin.onReceiveWhatsappMessage(req.body.from.number,req.body.message.content.text,req.params.callbackId,function(err,data){
 
 
-        if(err){
-          //  res.status(200).send(err).end();   
-        }
-        else
-        {
-            //res.status(200).send(data).end();
-        }
-
-       // res.status(200).send("GOT APP MESSAGE").end();
+        
+      
 
     });
 
@@ -336,14 +329,14 @@ app.post('/webhook/app/inbound-message/:callbackId', function(req, res){
 
 app.post('/webhook/app/events/:callbackId', function(req, res){
     
-    console.log(req.body);
+   
     res.status(200).send("GOT APP MES events").end();
 
 });
 
 app.post('/webhook/app/inbound-status/:callbackId', function(req, res){
     
-    console.log(req.body);
+    
     res.status(200).send("GOT APP MES STATUS").end();
 
 });
@@ -353,7 +346,7 @@ app.post('/webhook/outbound/:callbackId', function(req, res){
     
    
   
-  console.log(req.body);
+ 
     nfPlugin.MessageReceivedFromFreshdesk(req.body,req.params.callbackId,function(err,data){
 
        
