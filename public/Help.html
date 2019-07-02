@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="css/bootstrap-4.3.1.css">
+  <title>Help - Nexmo Freshdesk Connector</title>
+  <link rel="icon" href="Images/apple-touch-icon.png">
+  <meta name="description">
+  <meta name="keywords" content="Nexmo,freshdesk, connector, whatsapp">
+</head>
+
+<body ng-app="app" ng-controller="helpController as hc">
+  <nav class="navbar navbar-expand-md navbar-light">
+    <div class="container"> <a class="navbar-brand text-primary" href="#">
+        <img height="64" src="Images/apple-touch-icon.png">
+        <b>Freshdesk Connector</b>
+      </a> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar4">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar4">
+        <ul class="navbar-nav ml-auto">
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="py-5 text-center">
+    <div class="container">
+      <div class="row" style="">
+        <div class="mx-auto col-md-8">
+          <h1 class="mb-3">Help &amp; Troubleshoot</h1>
+          <p class="lead">This page will help you to configure the connector, and to get support</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <h3 class="card-header"><b> Instructions</b></h3>
+            <div class="card-body">
+              <h4>User Account setup and login</h4>
+              <p>The connector supports multi-tenant configuration, which means that any user can create an account and configure the connector in the Freshdesk environment.</p>
+              <ol>
+                <li>To begin with configuration, a user needs to create an account using an email ID. Once the account is created, the user can login with the credentials.</li>
+                <li>After successful login, user will need to make the necessary configurations for Freshdesk, Nexmo and the connector. The user needs to fill all the required details to enable connector.</li>
+                <li>For each account, a unique configuration can be managed.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <h4>Freshdesk Details</h4>
+              <div class="table-responsive pi-draggable" draggable="true">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Parameter Name</th>
+                      <th>Description</th>
+                      <th>Default Values/Sample Values</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Freshdesk API Key</td>
+                      <td>API key to access Freshdesk data, can be found in User Profile settings section in your Freshdesk account</td>
+                      <td>ggzaYx2sMuQvE0ub7Aad</td>
+                    </tr>
+                    <tr>
+                      <td>Freshdesk URL</td>
+                      <td>A URL of your Freshdesk domain/web app, which is also used during the login process at Freshdesk</td>
+                      <td>https://yourdomain.freshdesk.com </td>
+                    </tr>
+                   
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <h4>Nexmo Configuration Details</h4>
+              <div class="table-responsive pi-draggable" draggable="true">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Parameter Name</th>
+                      <th>Description</th>
+                      <th>Default Values/Sample Values</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>API Key</td>
+                      <td>The API key to access your Nexmo account. It can be found in your Nexmo account settings </td>
+                      <td>h5a2fg23d7</td>
+                    </tr>
+                    <tr>
+                      <td>API Secret</td>
+                      <td>The API key to access your Nexmo account. It can be found in your Nexmo account settings</td>
+                      <td>acr4U345</td>
+                    </tr>
+                    <tr>
+                      <td>APP ID</td>
+                      <td>The Nexmo App ID. This will need to be created at Nexmo in order to access the Messaging API.</td>
+                      <td>ef158f3f-19c8-48b1-8065-ebb520f77b41</td>
+                    </tr>
+                    
+                    <tr>
+                      <td>Public Key</td>
+                      <td>The App ID public key. It will be used to authenticate the Nexmo App. </td>
+                      <td>A JWT token</td>
+                    </tr>
+                    <tr>
+                      <td>Nexmo Virtual Number</td>
+                      <td>The virtual number provided in your Nexmo account. It can be found in the number section at Nexmo</td>
+                      <td>447418342149</td>
+                    </tr>
+                    <tr>
+                      <td>WhatsApp Number</td>
+                      <td>The WhatsApp virtual number. It can be found in the number section at Nexmo</td>
+                      <td>447418342149</td>
+                    </tr>
+                    <tr>
+                      <td>Facebook Page Id</td>
+                      <td>The page ID, on which you have enabled the Nexmo App. It can be found in the External Account section in the Nexmo App (after the configuration has done)</td>
+                      <td>570044793496335</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5" style="">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <h4>Connector Settings</h4>
+              <div class="table-responsive pi-draggable" draggable="true">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Parameter Name</th>
+                      <th>Description</th>
+                      <th>Default Values/Sample Values</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>No of Retries</td>
+                      <td>This is the limit of sending invalid options by the user, until the connector is reset it. </td>
+                      <td>3</td>
+                    </tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5" style="">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <h4>Message Templates</h4>
+              <div class="table-responsive pi-draggable" draggable="true">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Parameter Name</th>
+                      <th>Description</th>
+                      <th>Default Values/Sample Values</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>New Ticket</td>
+                      <td>To raise a new ticket request, the user can either text the command as “New” followed by the issue description or directly write a description for the issue. In case there is already an open ticket for the user, the connector will text back a menu with the opened tickets and options </td>
+                      <td>Support: New ticket is created with ID #{ticket.id} and Titled as {ticket.subject}, it will be processed shortly, thanks for your cooperation</td>
+                    </tr>
+                    <tr>
+                      <td>Confirmation Message</td>
+                      <td>If the user has an open ticket, then the connector will ask the user if they want to add a comment to the open ticket, or ask if they want to create a new one </td>
+                      <td>Support: Add comment to ticket #{ticket.id}? Titled as: ({ticket.subject}) reply YES to confirm, or NO to Create new ticket</td>
+                    </tr>
+                    <tr>
+                      <td>Help</td>
+                      <td>A Help command to guide user </td>
+                      <td>To create a new ticket, reply NEW <ticket description="">. For ticket status reply STATUS <id>. For open tickets reply OPEN. For help reply HELP For comment on last seen ticket reply with REPLY +you comment </id>
+                        </ticket>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Fixed Message</td>
+                      <td>This message will be added to each outgoing message </td>
+                      <td>To create a new ticket, reply NEW. For ticket status reply STATUS. For open ticket reply OPEN. For help reply HELP </td>
+                    </tr>
+                    <tr>
+                      <td>Option</td>
+                      <td> When connector sends options to choose</td>
+                      <td>{options} Please reply with options mentioned above</td>
+                    </tr>
+                    <tr>
+                      <td>No tickets were found</td>
+                      <td>When no ticket was found </td>
+                      <td>Support: No Open tickets were found</td>
+                    </tr>
+                    <tr>
+                      <td>Comment Added</td>
+                      <td>When your query is added as a comment to a ticket </td>
+                      <td>Support: your comment is added to ticket id #{ticket.id} titled as {ticket.subject}. Thanks for your support, your </td>
+                    </tr>
+                    <tr>
+                      <td>Invalid Request</td>
+                      <td>When connector receives an invalid input </td>
+                      <td>You have entered an incorrect option, please retry with valid option {lastmessage}</td>
+                    </tr>
+                    <tr>
+                      <td>Incorrect Option selected</td>
+                      <td> When user selected incorrect option</td>
+                      <td>You have entered an incorrect option, please retry with valid option {lastmessage}</td>
+                    </tr>
+                    <tr>
+                      <td>Exceed Retry</td>
+                      <td>When user exceeds the retry limit </td>
+                      <td>You have entered incorrect responses {count} times</td>
+                    </tr>
+                    <tr>
+                      <td>Ticket Status</td>
+                      <td>When user asks for the ticket status </td>
+                      <td>Your ticket titled as {ticket.subject} and status is {ticket.status}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <h4>Available Commands</h4>
+              <ol>
+                <li><b>New:</b> To raise a new ticket request, the user can either text the command as<b> “New”</b> followed by the issue description or directly write a description for the issue. In case there is already an open ticket for the user, the connector will text back a menu with the opened tickets and options</li>
+                <li><b>Open: </b>To view all the open tickets, the user can text <b>“OPEN”</b> command. The connector will text back all open tickets in batches of three at a time. </li>
+                <li><b>Reply:</b> to reply to a ticket, the user will text <b>REPLY</b> followed by the response. This will notify the agent and add the response to the last seen ticket</li>
+                <li><b>Help:</b> To see all available commands supported by the connector, the user will text <b>HELP</b> command to list all supported commands with detail</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5 text-center" ng-if="false" style="">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="mb-3">Frequest Questions</h2>
+          <div ng-repeat="x in faqs">
+            <div class="alert text-body alert-light" role="alert">
+              <h4 class="alert-heading">{{x.Query}}</h4>
+              <p class="mb-0">{{x.Answer}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5 text-center" ng-if="false" style="">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="mb-3">Troubleshoot</h2>
+          <div ng-repeat="x in troubleshoot">
+            <div class="alert text-body alert-light" role="alert">
+              <h4 class="alert-heading">{{x.Query}}</h4>
+              <p class="mb-0">{{x.Answer}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <h4><b>Support</b></h4>
+              <img src="Images/adv.jpg">
+              <div class="table-responsive pi-draggable">
+                <table class="table">
+                  <thead>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>About us</td>
+                      <td>Advaiya is an experienced system integrator that works hard to understand customers’ needs to provide working solutions that maximize ROI and business impact. </td>
+                    </tr>
+                    <tr>
+                      <td><b>Contact information</b></td>
+                    </tr>
+                    <tr>
+                      <td>Email</td>
+                      <td>connectorsupport@advaiya.com </td>
+                    </tr>
+                    <tr>
+                      <td>Support URL</td>
+                      <td><a href="https://www.advaiya.com/connector-support/"> https://www.advaiya.com/connector-support/</a></td>
+                    </tr>
+                    <tr>
+                      <td>Address and phone - US</td>
+                      <td>14575 NE Bel Red Rd,<br> Ste 201, Bellevue WA 98007,<br> USA +1-425-256-3123 </td>
+                    </tr>
+                    <tr>
+                      <td>Address and phone - India</td>
+                      <td>G14-17, IT Park,<br> MIA Extension Udaipur, India 313002<br> +91-294-305-1100 </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="mb-0">© 2019 Nexmo. All rights reserved</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+  <script src="js/popper.min.js" crossorigin="anonymous"></script>
+  <script src="js/bootstrap.min.js" crossorigin="anonymous" style=""></script>
+  <script src="js/angular.min.js" crossorigin="anonymous" style=""></script>
+  <script src="js/App.js" crossorigin="anonymous" style=""></script>
+  <script src="js/helpcontroller.js" crossorigin="anonymous" style=""></script>
+  <script src="js/helpservice.js" crossorigin="anonymous" style=""></script>
+ 
+</body>
+
+</html>

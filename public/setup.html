@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body ng-app="app" ng-controller="setupcontroller as sc">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="css/bootstrap-4.3.1.css">
+  <title>Nexmo Freshdesk Connector</title>
+  <link rel="icon" href="Images/apple-touch-icon.png">
+  <meta name="description">
+  <meta name="keywords" content="Nexmo,freshdesk, connector, whatsapp">
+  <nav class="navbar navbar-expand-md navbar-light">
+    <div class="container"> <a class="navbar-brand text-primary" href="#">
+        <img height="64" src="Images/apple-touch-icon.png">
+        <b>Freshdesk Connector</b>
+      </a> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar4">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar4">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"> <a class="nav-link" href="Help.html">Help</a> </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="py-3" style="">
+    <div class="container">
+        <div class="alert {{sc.class}}">
+            <strong>{{sc.heading}}</strong> {{sc.message}}
+        </div>
+      <div class="row" style="">
+        <div class="col-md-8 p-4">
+          <h1>Connector Configuration</h1>
+          <p contenteditable="true">Hi {{sc.username}} ,Please enter your Freshdesk and Nexmo credentials in order to configure
+            the multi-messaging connector. For instructions, please go the<a href="Help.html">(Help)</a>. If you don’t
+            already have a Nexmo account, you can signup <a href="index.html">here.</a> You must add funds to your Nexmo
+            account to continue.</p>
+        </div>
+        
+      </div>
+      <div class="row">
+
+         
+        <div class="col-md-5 p-4">
+          <h3 class="mb-3">Freshdesk Configuration</h3>
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-12"> <label data-toggle="popover" data-trigger="hover" data-content="Freshdesk API key, can be found in the Fresdesk Profile section">Freshdesk API Key</label> <input type="text" required="" ng-model="sc.data.freshdesk.User" class="form-control" id="freshdeskapikey" placeholder="Freshdesk API Key"> </div>
+            </div>
+            <div class="form-group"><label>Freshdesk URL</label> <input type="text" class="form-control" required="" ng-model="sc.data.freshdesk.BaseUrl" id="environmenturl" placeholder="Freshdesk Environment URL" style=""> </div>
+            <!-- <button ng-click="sc.savefreshdesk()" class="btn btn-primary">Save</button> -->
+          </form>
+        </div>
+        <div class="col-md-6 p-4">
+          <h3 class="mb-3">Nexmo Configuration</h3>
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-6"><label data-toggle="popover" data-trigger="hover" data-content="API Key, can be found in the Nexmo Profile settings">API KEY <i>You can retrieve this from your Nexmo Settings page.</i></label> <input type="text" class="form-control" ng-model="sc.data.NexmoConfig.API_KEY" id="nexmoapikey" placeholder="You can retrieve this from your Nexmo Settings page."> </div>
+              <div class="form-group col-md-6"> <label data-toggle="popover" data-trigger="hover" data-content="API Secret, can be found in your Nexmo Profile settings">API SECRET <i>You can retrieve this from your Nexmo Settings page.</i></label> <input type="text" class="form-control" ng-model="sc.data.NexmoConfig.API_SECRET" id="nexmosecret" placeholder="API Secret"> </div>
+            </div>
+            <p>Create a Messages and Dispatch Application by following the instructions referenced <a href="https://developer.nexmo.com/messages/code-snippets/create-an-application">here</a></p>
+            <div class="form-group"> <label data-toggle="popover" data-trigger="hover" data-content="retrieve after creating the app">APP ID (Nexmo App Id) <i>retrieve after creating the app</i></label> <input type="text" class="form-control" ng-model="sc.data.NexmoConfig.APP_ID" id="nexmoappid" placeholder="API id"> </div>
+            <div class="form-group"><label data-toggle="popover" data-trigger="hover" data-content="retrieve after creating the app">Public/Private Key <i>retrieve after creating the app</i></label> <textarea type="text" class="form-control" ng-model="sc.data.NexmoConfig.PRIVATE_KEY_PATH" id="privatepublickey" placeholder="Public/Private Key Combination" style=""></textarea></div>
+            <div class="form-group"><label data-toggle="popover" data-trigger="hover" data-content="Use any of your Nexmo Virtual to enable SMS and WhatsApp channels">Nexmo Virtual Number <i>for SMS only</i></label> <input type="text" class="form-control" ng-model="sc.data.NexmoConfig.VIRTUAL_NUMBER" id="nexmovirtualno" placeholder="Nexmo Virtual Number"> </div>
+            <div class="form-group"><label data-toggle="popover" data-trigger="hover" data-content="Provide Virtual Number to enable WhatsApp Messaging channel">WhatsApp Number <i>you must contact <a href="https://www.nexmo.com/contact-sales">Nexmo Sales</a> to use WhatsApp</i></label> <input type="text" class="form-control" ng-model="sc.data.NexmoConfig.WHATSAPP_NUMBER" id="nexmowpvirtualno" placeholder="WhatsApp Virtual Number"> </div>
+            <div class="form-group"> <label data-toggle="popover" data-trigger="hover" data-content="To Enable Facebook channel, provide the Page Id Configured with Nexmo">Facebook Page Id <i>to link your Facebook Page to Nexmo, follow the instructions listed <a href="https://developer.nexmo.com/messages/concepts/facebook">here.</a></i></label> <input type="text" class="form-control" ng-model="sc.data.NexmoConfig.FACEBOOK_SENDER_ID" id="facebookpageid" placeholder="Facebook Page Id">
+              <div class="form-group"><label></label></div>
+            </div>
+            <!-- <button type="submit" ng-click="sc.saveNexmo()" class="btn btn-primary">Save</button> -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-3" style="">
+    <div class="container">
+      <div class="row" style="">
+        <div class="col-md-8 p-4">
+          <h1>Webhook</h1>
+          <p>In order to set up the connector, you will need to configure the right webhooks for inbound
+            messages. You will also need to configure the Freshdesk Observer to receive messages from
+            Freshdesk.</p>
+            <p>For instructions, please go the <a href="Help.html">Help</a> section</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 p-4">
+          <h3 class="mb-3">Webhooks</h3>
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-12"><label data-toggle="popover" data-trigger="hover" data-content="Copy the URL to Inbound URL field in Nexmo App and settings ">Inbound Message Webhook</label> <input readonly type="text" ng-model="sc.data.webhooks.inbound" class="form-control" id="inboundmessagewebhook" placeholder="Inboud Webhook"> </div>
+            </div>
+            <div class="form-group"><label  data-toggle="popover" data-trigger="hover" data-content="Copy the URL to Status URL field in Nexmo App and Settings">Inbound Event Webhook</label> <input type="text" readonly ng-model="sc.data.webhooks.event" class="form-control" id="eventwebhook" placeholder="Inbound Event Webhook" style=""> </div>
+            <div class="form-group"><label data-toggle="popover" data-trigger="hover" data-content="To Receive updates from Freshdesk, create Observer and paste this URL to Observer's Webhook Trigger Field">Freshdesk Observer Webhook</label> <input readonly type="text" ng-model="sc.data.webhooks.outbound" class="form-control" id="form42" placeholder="Freshdesk Webhook for Observers"> </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5 text-center">
+    <div class="container">
+      <div class="row" style="">
+        <div class="mx-auto col-lg-12 col-10">
+          <h1>Connector Settings</h1>
+          <p class="mb-3">Basic connector settings to control functionality</p>
+          <form class="text-left">
+
+              <p class="mt-2">You will need to define template messages using predefined parameters for the connector. The
+                following are the predefined parameters to be used.;</p>
+                <p>For instructions, please go the <a href="Help.html">Help</a> section</p>
+              <ul class="">
+                <li>Ticket Id <b>{ticket.id}</b></li>
+                <li>Ticket Status <b>{ticket.status}</b></li>
+                <li>Ticket Subject <b>{ticket.subject}</b></li>
+                <li>List of Options <b>{options}</b></li>
+                <li>Last Message sent to user <b>{lastmessage}</b></li>
+                <li>Retries count <b>{count}</b></li>
+              </ul>
+
+            <div class="form-group"> <label for="form16">No of Retries</label> <input type="number" ng-model="sc.data.AppSettings.MaxOptionRetry" class="form-control" id="form16" placeholder="No of retries"> </div>
+            <div class="form-group">
+              <br>
+              <label class="lead" for="form21" data-toggle="popover" data-trigger="hover" data-content="You can customize any message as per your requirments, and apply the dynamic fields where ever you needed">  Message Templates</label>
+              <div class="list-group">
+                <div class="form-group"><label>Confirmation Message</label>
+                  <input type="text" ng-model="sc.data.AppSettings.Messages.ConfirmationMessage" class="form-control list-group-item list-group-item-action " id="form16" placeholder="">
+                </div>
+                <div class="form-group"><label>New Ticket</label>
+                  <input type="text" ng-model="sc.data.AppSettings.Messages.NewTicket" class="form-control list-group-item list-group-item-action " id="form16" placeholder="">
+                </div>
+                <div class="form-group"><label>Help</label>
+                  <input type="text" ng-model="sc.data.AppSettings.Messages.Help" class="form-control list-group-item list-group-item-action " id="form16" placeholder="">
+                </div>
+                <div class="form-group"><label>Fixed Message</label>
+                  <input type="text" ng-model="sc.data.AppSettings.Messages.FixedMessage" class="form-control list-group-item list-group-item-action " id="form16" placeholder="">
+                </div>
+                <div class="form-group"><label>Options (do not forget to use {options} with message</label>
+                  <input type="text" ng-model="sc.data.AppSettings.Messages.Options" class="form-control list-group-item list-group-item-action " id="form16" placeholder="">
+                </div>
+                <div class="form-group"><label>No Tickets were Found</label>
+                  <input type="text" ng-model="sc.data.AppSettings.Messages.NoTicketsFound" class="form-control list-group-item list-group-item-action " id="form16" placeholder="">
+                </div>
+                <div class="form-group"><label>Comment Added</label>
+                  <input type="text" ng-model="sc.data.AppSettings.Messages.CommentAdded" class="form-control list-group-item list-group-item-action " id="form16" placeholder="">
+                </div>
+                <div class="form-group"><label>Invalid Request</label>
+                  <input type="text" ng-model="sc.data.AppSettings.Messages.InvalidRequest" class="form-control list-group-item list-group-item-action " id="form16" placeholder="">
+                </div>
+                <div class="form-group"><label>Incorrect Optiion Selected</label>
+                  <input type="text" ng-model="sc.data.AppSettings.Messages.IncorrectOptionSelected" class="form-control list-group-item list-group-item-action " id="form16" placeholder="">
+                </div>
+                <div class="form-group"><label>Exceed Retry</label>
+                  <input type="text" ng-model="sc.data.AppSettings.Messages.ExceedRetry" class="form-control list-group-item list-group-item-action " id="form16" placeholder="">
+                </div>
+                <div class="form-group"><label >Ticket Status</label>
+                  <input type="text" ng-model="sc.data.AppSettings.Messages.TicketStatus" class="form-control list-group-item list-group-item-action " id="form16" placeholder="">
+                </div>
+              </div>
+             
+           
+          </form>
+        </div>
+      </div>
+    </div>
+  </div><br> <button type="submit" ng-click="sc.saveAll()" class="btn btn-primary">Save All Configuration</button>
+  <br>
+  <div class="alert {{sc.class}}">
+      <strong>{{sc.heading}}</strong> {{sc.message}}
+  </div>
+  </div>
+  <div class="py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="mb-0">© 2019 Nexmo. All rights reserved</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+  <script src="js/popper.min.js" crossorigin="anonymous" style=""></script>
+  <script src="js/bootstrap.min.js" crossorigin="anonymous" style=""></script>
+  <script src="js/angular.min.js" crossorigin="anonymous" style=""></script>
+  <script src="js/App.js" crossorigin="anonymous" style=""></script>
+  <script src="js/setupcontroller.js" crossorigin="anonymous" style=""></script>
+  <script src="js/indexservice.js" crossorigin="anonymous" style=""></script>
+  <script src="js/setupservices.js" crossorigin="anonymous" style=""></script>
+  <script>
+    $(document).ready(function(){
+        $('[data-toggle="popover"]').popover();   
+    });
+    </script>
+</body>
+
+</html>

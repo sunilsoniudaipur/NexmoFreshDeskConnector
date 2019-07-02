@@ -1,0 +1,27 @@
+{
+  "name": "nexmofreshdesktwoway",
+  "version": "1.0.0",
+  "description": "app will provide a integration between nexmo channels and freshdesk by which user can manage its tickets using sms",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sunil.soni@advaiya.com",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.3.1",
+    "data-store": "^3.1.0",
+    "express": "^4.16.4",
+    "fs": "0.0.1-security",
+    "jquery": "^3.4.1",
+    "jsonfile": "^5.0.0",
+    "mongodb": "^3.2.7",
+    "nexmo": "^2.4.3-beta-1",
+    "npm": "^6.9.0",
+    "request": "^2.88.0",
+    "superagent": "^5.1.0",
+    "uri-js": "^4.2.2",
+    "uuid": "^3.3.2"
+  }
+}

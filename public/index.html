@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="css/bootstrap-4.3.1.css">
+  <title>Nexmo Freshdesk Connector</title>
+  <link rel="icon" href="Images/apple-touch-icon.png">
+  <meta name="description">
+  <meta name="keywords" content="Nexmo,freshdesk, connector, whatsapp">
+</head>
+
+<body ng-app="app" ng-controller="indexController as ic">
+  <nav class="navbar navbar-expand-md navbar-light">
+    <div class="container"> <a class="navbar-brand text-primary" href="#">
+        <img height="64" src="Images/apple-touch-icon.png">
+        <b>Freshdesk Connector</b>
+      </a> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar4">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar4">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"> <a class="nav-link" href="Help.html">Help</a> </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="py-5 text-center">
+    <div class="container">
+      <div class="row" style="">
+        <div class="mx-auto col-md-8">
+          <h1 class="mb-3">Configure Connector</h1>
+          <p class="lead">To begin with Connector Configuration, first you require to setup an user account. the account would be used to store your connector configuration and environment details, and enable connector to send/receive messages. the same account will be used to update configuration later</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5 text-center" style="background-image: url('./Images/bg.jpg');background-size:cover;">
+    <div class="container">
+      <div class="row">
+        <div class="mx-auto col-md-6 col-10 bg-white p-5">
+          <h1 class="mb-4">Create Account</h1>
+          <div class="alert alert-info" role="alert" ng-if="errorMessage">
+            
+          
+            <p ng-bind="errorMessage" class="mb-0 text-center">This is an info panel.</p>
+          </div>
+          <form>
+              <div class="form-group"> <input type="text" required ng-model="name" class="form-control" id="name" placeholder="Your Name"> </div>
+              <div class="form-group"> <input type="email" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" ng-change="isUnique()" required ng-model="email" class="form-control" id="email" placeholder="Email"> 
+               
+              </div>
+            <div class="form-group"> <input type="password" required ng-model="password" class="form-control" id="password" placeholder="Password"> </div>
+            <div class="form-group mb-3"> <input type="password" required ng-model="cpassword" class="form-control" placeholder="Confirm Password" id="cpassword"> <small class="form-text text-muted text-right">
+              </small> </div> <button ng-disabled="!isValid" type="submit" ng-click="signup()" id="submit" class="btn btn-primary">Create Account</button>
+         
+          </form>
+          <br> <h6 class="display-6">Already have an account <a href="login.html">Login</a> </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="mb-0">© 2019 Nexmo. All rights reserved</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+  <script src="js/popper.min.js" crossorigin="anonymous"></script>
+  <script src="js/bootstrap.min.js" crossorigin="anonymous" style=""></script>
+  <script src="js/angular.min.js" crossorigin="anonymous" style=""></script>
+  <script src="js/App.js" crossorigin="anonymous" style=""></script>
+  <script src="js/indexcontroller.js" crossorigin="anonymous" style=""></script>
+  <script src="js/indexservice.js" crossorigin="anonymous" style=""></script>
+  
+</body>
+
+</html>

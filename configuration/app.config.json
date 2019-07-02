@@ -1,0 +1,24 @@
+{
+    "Version":"0.1",
+    "MaxOptionRetry":3,
+    "default":"true",
+    "Messages":{
+         "ConfirmationMessage":"Support: Add comment to ticket #{ticket.id}? Titled as: ({ticket.subject}) reply YES to cconfirm, or NO to Create new ticket",
+         "NewTicket":"Support: New ticket is created with ID #{ticket.id} and Titled as {ticket.subject}, it will be processed shortly, thanks for cooperation",
+         "Help":"To create a new ticket reply NEW <Ticket Description>.\n For ticket status reply STATUS <id>.\n For open tickets reply OPEN.\n For help reply HELP \n For comment on last seen ticket reply with REPLY <Comment>",
+         "FixedMessage":"\nTo create a new ticket reply NEW. For ticket status reply STATUS. For open ticket reply OPEN. For help reply HELP",
+         "Options":"{options} Please reply with options mentioned above",
+         "NoTicketsFound":"Support: No Open tickets were found",
+         "CommentAdded":"Support: your comment is added to ticket id #{ticket.id} titled as {ticket.subject}. Thanks for your support, your issue will be resolved shortly",
+         "InvalidRequest":"Invalid request",
+         "IncorrectOptionSelected":"you have entered an incorrect option, please retry with valid option {lastmessage}",
+         "ExceedRetry":"You have entered incorrect responses {count} times,",
+         "TicketStatus":"Your ticket titled as {ticket.subject} and status is {ticket.status}"
+
+    },
+
+    "ReadMe":"the plugin allow you to edit the messages as well you can use some of the dynamic paramters in the mesasge like, ticket.id, ticket.subject, ticket.status, ticket.created_at and for line break you can use the /n, do not change option text like YES/NO else you might face some issues"
+   
+
+
+}

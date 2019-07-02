@@ -1,0 +1,20 @@
+{
+     "User":"ggzaYx2sMuQvE0ub7Aad",
+     "Password":"andrandom@123text",
+     "Description":"in freshdesk uesrname/api key is same, in case of api key you can use any random password",
+     "BaseUrl":"https://advaiyaaid.freshdesk.com",
+     "CreateContact":"/api/v2/contacts",
+     "UpdateContactPut":"/api/v2/contacts",
+     "ReadContacts":"/api/v2/contacts",
+     "CreateTicket":"/api/v2/tickets",
+     "UpdateTicketPut":"/api/v2/tickets/",
+     "ReadAllTickets":"/api/v2/tickets",
+     "CreateReply":"/api/v2/tickets/",
+     "SearchTickets":"/api/v2/search/tickets"
+
+
+
+    
+
+} 
+

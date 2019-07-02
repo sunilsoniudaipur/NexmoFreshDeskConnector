@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="css/bootstrap-4.3.1.css">
+  <title>Nexmo Freshdesk Connector</title>
+  <link rel="icon" href="Images/apple-touch-icon.png">
+  <meta name="description">
+  <meta name="keywords" content="Nexmo,freshdesk, connector, whatsapp">
+</head>
+
+<body ng-app="app" ng-controller="loginController as lc">
+  <nav class="navbar navbar-expand-md navbar-light">
+    <div class="container"> <a class="navbar-brand text-primary" href="#">
+        <img height="64" src="Images/apple-touch-icon.png">
+        <b>Freshdesk Connector</b>
+      </a> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar4">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar4">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"> <a class="nav-link" href="Help.html">Help</a> </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  </div>
+  <div class="py-5 text-center" style="background-image: url('./Images/bg.jpg')">
+    <div class="container">
+      <div class="row">
+        <div class="mx-auto col-md-6 col-10 bg-white p-5">
+          <h1 class="mb-4">Login</h1>
+          <form>
+
+              <div class="form-group"> <input type="email" required ng-model="email" class="form-control" id="form9" required="" placeholder="Email">
+                <div class="invalid-feedback" ng-bind="errorMessageEmail">{{errorMessageEmail}}</div>
+              </div>
+
+            <div class="form-group"> <input type="password" ng-model="password" class="form-control" id="form9" required="" placeholder="Password">
+              <div class="invalid-feedback" ng-bind="errorMessage">Please provide a valid input.</div>
+            </div>
+            <div class="form-group mb-3"> <small class="form-text text-muted text-right">
+                <a href="index.html">Create New Account</a>
+              </small> </div> <button type="submit" ng-click="login()" class="btn btn-primary">Continue</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="mb-0">© 2019 Nexmo. All rights reserved</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+  <script src="js/popper.min.js" crossorigin="anonymous"></script>
+  <script src="js/bootstrap.min.js" crossorigin="anonymous" style=""></script>
+  <script src="js/angular.min.js" crossorigin="anonymous" style=""></script>
+  <script src="js/App.js" crossorigin="anonymous" style=""></script>
+  <script src="js/logincontroller.js" crossorigin="anonymous" style=""></script>
+  <script src="js/indexservice.js" crossorigin="anonymous" style=""></script>
+ 
+</body>
+
+</html>
