@@ -14,7 +14,7 @@
     "data-store": "^3.1.0",
     "express": "^4.16.4",
     "fs": "0.0.1-security",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "jsonfile": "^5.0.0",
     "mongodb": "^3.2.7",
     "nexmo": "^2.4.3-beta-1",
